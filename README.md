@@ -1,4 +1,4 @@
-## DefaultWhere
+## TheWhere
 
 
 `the_where` set default params process for where query in ActiveRecord

@@ -1,4 +1,4 @@
-## DefaultWhere
+## TheWhere
 
 This Library set default params process for where query in ActiveRecord
 
