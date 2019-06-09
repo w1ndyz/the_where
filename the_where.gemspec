@@ -1,12 +1,12 @@
 $:.push File.expand_path('../lib', __FILE__)
-require 'default_where/version'
+require 'the_where/version'
 
 Gem::Specification.new do |s|
-  s.name = 'default_where'
-  s.version = DefaultWhere::VERSION
-  s.authors = ['qinmingyuan']
-  s.email = ['mingyuan0715@foxmail.com']
-  s.homepage = 'https://github.com/qinmingyuan/default_where'
+  s.name = 'the_where'
+  s.version = TheWhere::VERSION
+  s.authors = ['zoucaitou']
+  s.email = ['zoucaitou@gmail.com']
+  s.homepage = 'https://github.com/zoucaitou/the_where'
   s.summary = 'default process params for where'
   s.description = 'Description of QueryScope.'
   s.license = 'LGPL-3.0'

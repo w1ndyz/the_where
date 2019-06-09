@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   factory :user do
-    name 'qinmingyuan'
+    name 'zoucaitou'
   end
 
 end

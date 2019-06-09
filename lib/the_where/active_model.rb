@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module DefaultWhere
+module TheWhere
   module ActiveModel
   
     def human_attribute_name(attribute, options = {})
@@ -15,5 +15,5 @@ end
 
 
 ActiveSupport.on_load :active_record do
-  extend DefaultWhere::ActiveModel
+  extend TheWhere::ActiveModel
 end

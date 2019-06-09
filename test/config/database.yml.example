@@ -8,11 +8,11 @@ default: &default
 
 development:
   <<: *default
-  database: default_where_development
+  database: the_where_development
 
 test:
   <<: *default
-  database: default_where_test
+  database: the_where_test
 
 sqlite:
   adapter: sqlite3
@@ -22,11 +22,11 @@ mysql:
   adapter: mysql2
   username: root
   password: root
-  database: default_where
+  database: the_where
 
 postgresql:
   adapter: postgresql
   username: postgres
   password:
-  database: default_where
+  database: the_where
   min_messages: ERROR

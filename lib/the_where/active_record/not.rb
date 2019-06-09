@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module DefaultWhere
+module TheWhere
   module ActiveRecord
     module Not
 

@@ -1,21 +1,19 @@
 # frozen_string_literal: true
 
-# for i18n jsonb support search
-module DefaultWhere
+# for postgresql array search
+module TheWhere
   module Postgresql
-    module Key
-      PATTERN = ['-en', '-zh'].freeze
+    module Any
   
-      def key_scope(params)
+      def any_scope(params)
         where_string = []
         where_hash = {}
   
         params.each do |key, value|
-          i18n_key = key[/(en|zh)$/, 1]
-          real_key = key.sub(/-(en|zh)$/, '')
+          real_key = key.sub(/-(any)$/, '')
           agent_key = key.gsub(/[-.]/, '_')
   
-          where_string << "#{real_key}->>'#{i18n_key}' = :#{agent_key}"
+          where_string << ":#{agent_key} = ANY(#{real_key})"
           where_hash.merge! agent_key.to_sym => value
         end
   
@@ -29,9 +27,9 @@ module DefaultWhere
         end
       end
   
-      def filter_key(params)
+      def filter_any(params)
         params.select do |k, _|
-          k.end_with?(*PATTERN)
+          k.end_with?('-any')
         end
       end
     

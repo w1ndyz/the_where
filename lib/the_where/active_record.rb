@@ -4,11 +4,11 @@ require_relative 'active_record/not'
 require_relative 'active_record/range'
 require_relative 'active_record/like'
 require_relative 'active_record/order'
-#require_relative 'default_where/or'
+#require_relative 'the_where/or'
 require_relative 'postgresql/any'
 require_relative 'postgresql/key'
 
-module DefaultWhere
+module TheWhere
   module ActiveRecord
     include Not
     include Range
@@ -21,7 +21,7 @@ module DefaultWhere
     REJECT = ['', nil].freeze
     STRIP = true
   
-    def default_where(params = {}, options = {})
+    def the_where(params = {}, options = {})
       return all if params.blank?
   
       params = params.to_h
@@ -109,5 +109,5 @@ module DefaultWhere
 end
 
 ActiveSupport.on_load :active_record do
-  extend DefaultWhere::ActiveRecord
+  extend TheWhere::ActiveRecord
 end
